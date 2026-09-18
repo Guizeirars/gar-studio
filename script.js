@@ -37,6 +37,13 @@ menu?.addEventListener('click', () => {
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener('click', () => nav.classList.remove('mobile-open'));
 });
+
+const contactEmail = document.querySelector('.contact-email');
+
+if (contactEmail) {
+  contactEmail.innerHTML = 'GAR STUDIO <span>•</span> <a href="mailto:contato.garstudio@gmail.com" style="color: inherit; text-decoration: none;">contato.garstudio@gmail.com</a>';
+}
+
 const quoteModal = document.getElementById("quoteModal");
 
 const quoteClose = document.getElementById("quoteClose");

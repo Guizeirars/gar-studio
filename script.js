@@ -41,7 +41,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
 const contactEmail = document.querySelector('.contact-email');
 
 if (contactEmail) {
-  contactEmail.innerHTML = 'GAR STUDIO <span>•</span> <a href="mailto:contato.garstudio@gmail.com" style="color: inherit; text-decoration: none;">contato.garstudio@gmail.com</a>';
+  contactEmail.innerHTML = 'GAR STUDIO <span>•</span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contato.garstudio@gmail.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">contato.garstudio@gmail.com</a>';
 }
 
 const quoteModal = document.getElementById("quoteModal");

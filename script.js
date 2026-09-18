@@ -367,7 +367,7 @@ function setupMobileMenu() {
   if (!nav.querySelector('.mobile-menu-cta')) {
     const mobileCta = document.createElement('a');
     mobileCta.href = whatsappLink;
-    mobileCta.className = 'mobile-menu-cta nav-cta';
+    mobileCta.className = 'mobile-menu-cta';
     mobileCta.target = '_blank';
     mobileCta.rel = 'noopener noreferrer';
     mobileCta.innerHTML = 'Solicitar orçamento <span>↗</span>';

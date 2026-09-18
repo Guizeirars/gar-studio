@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="The Table — uma experiência gastronômica contemporânea.">
+    <meta name="theme-color" content="#10100e">
+
+    <title>The Table — Contemporary Dining</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="loader">
+        <div class="loader-name">THE TABLE</div>
+        <div class="loader-line"></div>
+    </div>
+
+    <header class="header" id="header">
+
+        <a href="#home" class="logo">
+            THE
+            <span>TABLE</span>
+        </a>
+
+        <nav class="nav">
+            <a href="#home">Início</a>
+            <a href="#experience">Experiência</a>
+            <a href="#menu">Menu</a>
+            <a href="#gallery">Galeria</a>
+            <a href="#contact">Contato</a>
+        </nav>
+
+        <a href="#reservation" class="reserve-top">
+            Reservar mesa
+            <span>↗</span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <i></i>
+            <i></i>
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-image"></div>
+            <div class="hero-shade"></div>
+
+            <div class="hero-content">
+
+                <div class="hero-kicker">
+                    <span></span>
+                    CONTEMPORARY DINING
+                </div>
+
+                <h1>
+                    FOOD
+                    <br>
+                    <i>BEYOND</i>
+                    <br>
+                    TASTE.
+                </h1>
+
+                <div class="hero-description">
+                    <p>
+                        Uma experiência gastronômica onde
+                        ingredientes, técnica e atmosfera
+                        encontram equilíbrio.
+                    </p>
+                </div>
+
+                <a href="#reservation" class="hero-reserve">
+                    <span>Reservar uma mesa</span>
+                    <b>↓</b>
+                </a>
+
+            </div>
+
+            <div class="hero-location">
+                <span>São Paulo</span>
+                <span>01 — 06</span>
+            </div>
+
+            <div class="hero-scroll">
+                <span>SCROLL TO EXPLORE</span>
+                <div></div>
+            </div>
+
+        </section>
+
+
+        <section class="manifesto section" id="experience">
+
+            <div class="section-number">01 / THE EXPERIENCE</div>
+
+            <div class="manifesto-grid">
+
+                <div class="manifesto-title">
+                    <span>COZINHA</span>
+                    <h2>
+                        FEITA PARA
+                        <i>SENTIR.</i>
+                    </h2>
+                </div>
+
+                <div class="manifesto-copy">
+
+                    <p class="large-copy">
+                        Acreditamos que uma boa refeição
+                        começa muito antes do primeiro garfo.
+                    </p>
+
+                    <p>
+                        Começa no ambiente. Na escolha dos ingredientes.
+                        No cuidado com cada detalhe. No tempo dedicado
+                        a criar algo que realmente merece ser lembrado.
+                    </p>
+
+                    <p>
+                        The Table nasceu para transformar o ato de
+                        comer em uma experiência completa.
+                    </p>
+
+                    <a href="#menu" class="line-link">
+                        Descubra nosso menu
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="experience-image">
+                <div class="experience-caption">
+                    <span>THE TABLE / 2026</span>
+                    <span>01</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="menu-section section" id="menu">
+
+            <div class="section-number">02 / THE MENU</div>
+
+            <div class="menu-heading">
+
+                <div>
+                    <span>UMA CURADORIA</span>
+
+                    <h2>
+                        SABORES
+                        <i>ESSENCIAIS.</i>
+                    </h2>
+                </div>
+
+                <p>
+                    Um menu que muda com as estações,
+                    respeitando o ingrediente e deixando
+                    a criatividade conduzir.
+                </p>
+
+            </div>
+
+
+            <div class="menu-tabs">
+
+                <button class="tab active" data-category="entradas">
+                    Entradas
+                </button>
+
+                <button class="tab" data-category="principais">
+                    Principais
+                </button>
+
+                <button class="tab" data-category="sobremesas">
+                    Sobremesas
+                </button>
+
+                <button class="tab" data-category="drinks">
+                    Drinks
+                </button>
+
+            </div>
+
+
+            <div class="menu-list" id="menuList">
+
+                <article class="dish" data-category="entradas">
+
+                    <div class="dish-image dish-01"></div>
+
+                    <div class="dish-content">
+                        <span>01</span>
+
+                        <div>
+                            <h3>Carpaccio da Casa</h3>
+                            <p>
+                                Filé maturado, azeite de ervas,
+                                parmesão e limão siciliano.
+                            </p>
+                        </div>
+
+                        <strong>R$ 48</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="dish" data-category="entradas">
+
+                    <div class="dish-image dish-02"></div>
+
+                    <div class="dish-content">
+                        <span>02</span>
+
+                        <div>
+                            <h3>Polvo Grelhado</h3>
+                            <p>
+                                Polvo, batata confit, páprica defumada
+                                e vinagrete de ervas.
+                            </p>
+                        </div>
+
+                        <strong>R$ 62</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="dish hidden-dish" data-category="principais">
+
+                    <div class="dish-image dish-03"></div>
+
+                    <div class="dish-content">
+                        <span>03</span>
+
+                        <div>
+                            <h3>Ravioli de Queijo</h3>
+                            <p>
+                                Massa artesanal, queijo curado,
+                                manteiga noisette e sálvia.
+                            </p>
+                        </div>
+
+                        <strong>R$ 76</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="dish hidden-dish" data-category="principais">
+
+                    <div class="dish-image dish-04"></div>
+
+                    <div class="dish-content">
+                        <span>04</span>
+
+                        <div>
+                            <h3>Entrecôte</h3>
+                            <p>
+                                Corte grelhado, purê de batata,
+                                molho demi-glace e vegetais.
+                            </p>
+                        </div>
+
+                        <strong>R$ 94</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="dish hidden-dish" data-category="sobremesas">
+
+                    <div class="dish-image dish-05"></div>
+
+                    <div class="dish-content">
+                        <span>05</span>
+
+                        <div>
+                            <h3>Chocolate 70%</h3>
+                            <p>
+                                Chocolate intenso, flor de sal,
+                                caramelo e sorvete de baunilha.
+                            </p>
+                        </div>
+
+                        <strong>R$ 34</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="dish hidden-dish" data-category="sobremesas">
+
+                    <div class="dish-image dish-06"></div>
+
+                    <div class="dish-content">
+                        <span>06</span>
+
+                        <div>
+                            <h3>Crème Brûlée</h3>
+                            <p>
+                                Baunilha, açúcar caramelizado
+                                e frutas da estação.
+                            </p>
+                        </div>
+
+                        <strong>R$ 32</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="dish hidden-dish" data-category="drinks">
+
+                    <div class="dish-image dish-07"></div>
+
+                    <div class="dish-content">
+                        <span>07</span>
+
+                        <div>
+                            <h3>Table Martini</h3>
+                            <p>
+                                Gin, vermute seco, cítricos
+                                e perfume de alecrim.
+                            </p>
+                        </div>
+
+                        <strong>R$ 38</strong>
+                    </div>
+
+                </article>
+
+
+                <article class="dish hidden-dish" data-category="drinks">
+
+                    <div class="dish-image dish-08"></div>
+
+                    <div class="dish-content">
+                        <span>08</span>
+
+                        <div>
+                            <h3>Garden Tonic</h3>
+                            <p>
+                                Gin, tônica, pepino, manjericão
+                                e limão.
+                            </p>
+                        </div>
+
+                        <strong>R$ 36</strong>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="statement">
+
+            <div class="statement-image"></div>
+
+            <div class="statement-content">
+
+                <span>THE TABLE</span>
+
+                <blockquote>
+                    “O MELHOR
+                    <i>INGREDIENTE</i>
+                    É O MOMENTO.”
+                </blockquote>
+
+                <div class="statement-line"></div>
+
+            </div>
+
+        </section>
+
+
+        <section class="gallery section" id="gallery">
+
+            <div class="section-number">03 / THE SPACE</div>
+
+            <div class="gallery-heading">
+
+                <h2>
+                    UM LUGAR
+                    <br>
+                    PARA <i>FICAR.</i>
+                </h2>
+
+                <p>
+                    Pensado para encontros,
+                    conversas e noites que
+                    merecem durar um pouco mais.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item gallery-wide">
+                    <div class="gallery-photo gallery-01"></div>
+                    <span>01 / 05</span>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-photo gallery-02"></div>
+                    <span>02 / 05</span>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-photo gallery-03"></div>
+                    <span>03 / 05</span>
+                </div>
+
+                <div class="gallery-item gallery-tall">
+                    <div class="gallery-photo gallery-04"></div>
+                    <span>04 / 05</span>
+                </div>
+
+                <div class="gallery-item gallery-wide">
+                    <div class="gallery-photo gallery-05"></div>
+                    <span>05 / 05</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="chef section">
+
+            <div class="section-number">04 / THE KITCHEN</div>
+
+            <div class="chef-grid">
+
+                <div class="chef-photo"></div>
+
+                <div class="chef-copy">
+
+                    <span>POR TRÁS DA COZINHA</span>
+
+                    <h2>
+                        TÉCNICA
+                        <br>
+                        COM <i>PERSONALIDADE.</i>
+                    </h2>
+
+                    <p>
+                        Nossa cozinha é comandada por uma equipe
+                        que acredita no equilíbrio entre técnica,
+                        simplicidade e criatividade.
+                    </p>
+
+                    <p>
+                        Ingredientes locais, processos cuidadosos
+                        e uma busca constante por novas formas
+                        de surpreender.
+                    </p>
+
+                    <div class="chef-signature">
+                        <span>Chef</span>
+                        <strong>Lucas Andrade</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="reservation" id="reservation">
+
+            <div class="reservation-image"></div>
+            <div class="reservation-overlay"></div>
+
+            <div class="reservation-content">
+
+                <span class="reservation-label">
+                    RESERVAS
+                </span>
+
+                <h2>
+                    SUA MESA
+                    <br>
+                    <i>ESPERA.</i>
+                </h2>
+
+                <p>
+                    Escolha a data, horário e quantidade de pessoas.
+                    Nós cuidamos do resto.
+                </p>
+
+                <button class="reservation-button" id="openReservation">
+                    Solicitar reserva
+                    <span>↗</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="contact section" id="contact">
+
+            <div class="section-number">05 / VISIT US</div>
+
+            <div class="contact-grid">
+
+                <div class="contact-copy">
+
+                    <h2>
+                        ENCONTRE
+                        <br>
+                        <i>A GENTE.</i>
+                    </h2>
+
+                    <div class="contact-details">
+
+                        <div>
+                            <span>ENDEREÇO</span>
+                            <p>
+                                Rua Oscar Freire, 742<br>
+                                Jardins — São Paulo, SP
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>HORÁRIOS</span>
+                            <p>
+                                Ter — Qui · 12h — 23h<br>
+                                Sex — Sáb · 12h — 00h
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>CONTATO</span>
+                            <p>
+                                (11) 98888-7777<br>
+                                hello@thetable.com.br
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="map">
+
+                    <div class="map-road road-01"></div>
+                    <div class="map-road road-02"></div>
+                    <div class="map-road road-03"></div>
+
+                    <div class="map-pin">
+                        <span></span>
+                    </div>
+
+                    <div class="map-label">
+                        THE TABLE
+                        <small>JARDINS · SÃO PAULO</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div class="footer-logo">
+                THE
+                <i>TABLE.</i>
+            </div>
+
+            <div class="footer-tagline">
+                <p>
+                    FOOD IS NOT JUST
+                    <br>
+                    WHAT WE <i>EAT.</i>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <div>
+                <span>SOCIAL</span>
+                <a href="#">Instagram ↗</a>
+            </div>
+
+            <div>
+                <span>CONTATO</span>
+                <a href="tel:+5511988887777">(11) 98888-7777</a>
+            </div>
+
+            <div>
+                <span>RESERVAS</span>
+                <a href="#reservation">Solicitar mesa ↗</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 THE TABLE</span>
+            <span>DESIGNED BY GAR STUDIO</span>
+            <a href="#home">BACK TO TOP ↑</a>
+        </div>
+
+    </footer>
+
+
+    <div class="reservation-modal" id="reservationModal">
+
+        <div class="modal-bg"></div>
+
+        <div class="modal">
+
+            <button class="modal-close" id="closeReservation">×</button>
+
+            <span class="modal-kicker">RESERVA</span>
+
+            <h2>
+                SUA
+                <br>
+                <i>MESA.</i>
+            </h2>
+
+            <p>
+                Preencha os dados e envie sua solicitação
+                pelo WhatsApp.
+            </p>
+
+            <form id="reservationForm">
+
+                <label>
+                    NOME
+                    <input
+                        type="text"
+                        id="guestName"
+                        placeholder="Seu nome"
+                        required
+                    >
+                </label>
+
+                <label>
+                    QUANTIDADE DE PESSOAS
+                    <select id="guestCount" required>
+                        <option value="">Selecione</option>
+                        <option>1 pessoa</option>
+                        <option>2 pessoas</option>
+                        <option>3 pessoas</option>
+                        <option>4 pessoas</option>
+                        <option>5 pessoas</option>
+                        <option>6 pessoas</option>
+                        <option>7 pessoas</option>
+                        <option>8 pessoas</option>
+                    </select>
+                </label>
+
+                <div class="form-row">
+
+                    <label>
+                        DATA
+                        <input type="date" id="reservationDate" required>
+                    </label>
+
+                    <label>
+                        HORÁRIO
+                        <select id="reservationTime" required>
+                            <option value="">Horário</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                            <option>21:00</option>
+                            <option>22:00</option>
+                        </select>
+                    </label>
+
+                </div>
+
+                <button type="submit" class="modal-button">
+                    Continuar no WhatsApp
+                    <span>↗</span>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

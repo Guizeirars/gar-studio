@@ -179,6 +179,10 @@ function injectUpgradesCss() {
       line-height: 1.5;
     }
 
+    .contact-email {
+      display: none !important;
+    }
+
     @media (max-width: 960px) {
       .nav.mobile-open {
         position: fixed;
@@ -240,13 +244,6 @@ function injectUpgradesCss() {
 
       .trust-card {
         min-height: auto;
-      }
-
-      .contact-email {
-        width: 90vw;
-        white-space: normal !important;
-        text-align: center;
-        line-height: 1.7;
       }
     }
   `;
@@ -349,11 +346,7 @@ function enhanceContent() {
     );
   }
 
-  const contactEmail = document.querySelector('.contact-email');
-
-  if (contactEmail) {
-    contactEmail.innerHTML = `GAR STUDIO <span>•</span> <a href="${gmailLink}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">contato.garstudio@gmail.com</a>`;
-  }
+  document.querySelector('.contact-email')?.remove();
 }
 
 function setupMobileMenu() {

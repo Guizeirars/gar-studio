@@ -14,12 +14,14 @@ window.addEventListener('scroll',()=>header?.classList.toggle('scrolled',window.
 menuToggle?.addEventListener('click',()=>{
   menuToggle.classList.toggle('open');
   nav?.classList.toggle('open');
+  document.body.classList.toggle('menu-open',nav?.classList.contains('open'));
 });
 
 document.querySelectorAll('.nav a').forEach(link=>{
   link.addEventListener('click',()=>{
     menuToggle?.classList.remove('open');
     nav?.classList.remove('open');
+    document.body.classList.remove('menu-open');
   });
 });
 
@@ -39,7 +41,7 @@ function closeModal(){modal?.classList.remove('active');document.body.classList.
 openReservation?.addEventListener('click',openModal);
 closeReservation?.addEventListener('click',closeModal);
 modalBg?.addEventListener('click',closeModal);
-document.addEventListener('keydown',event=>{if(event.key==='Escape')closeModal()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeModal();menuToggle?.classList.remove('open');nav?.classList.remove('open');document.body.classList.remove('menu-open')}});
 
 const reservationDate=document.getElementById('reservationDate');
 if(reservationDate){
@@ -56,7 +58,9 @@ reservationForm?.addEventListener('submit',event=>{
 
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
   link.addEventListener('click',event=>{
-    const target=document.querySelector(link.getAttribute('href'));
+    const href=link.getAttribute('href');
+    if(!href||href==='#')return;
+    const target=document.querySelector(href);
     if(!target)return;
     event.preventDefault();
     target.scrollIntoView({behavior:'smooth',block:'start'});
@@ -101,4 +105,88 @@ function applyDemoSafety(){
   document.querySelector('.hero-reserve')?.insertAdjacentHTML('afterend','<div class="demo-badge">Projeto fictício para portfólio</div>');
 }
 
+function applyResponsiveFix(){
+  const style=document.createElement('style');
+  style.textContent=`
+    html,body{max-width:100%;overflow-x:hidden}
+    body.menu-open{overflow:hidden}
+    img,video,canvas,svg{max-width:100%}
+
+    @media(max-width:1024px){
+      .header{padding:0 4vw}
+      .nav{gap:20px}
+      .menu-heading,.gallery-heading,.footer-main{gap:45px}
+    }
+
+    @media(max-width:820px){
+      .nav{position:fixed;inset:0;width:100vw;min-height:100svh;background:rgba(16,16,14,.98);backdrop-filter:blur(18px);flex-direction:column;justify-content:center;align-items:center;gap:26px;transform:translateX(100%);transition:.45s cubic-bezier(.77,0,.18,1);z-index:999}
+      .nav.open{transform:translateX(0)}
+      .nav a{font-family:var(--serif);font-size:clamp(28px,8vw,48px);text-transform:none;letter-spacing:0}
+      .menu-toggle{display:block;z-index:1001}
+      .reserve-top{display:none}
+      .hero,.statement,.reservation{min-height:auto}
+      .manifesto-grid,.chef-grid,.contact-grid{grid-template-columns:1fr;gap:55px}
+      .footer-main,.menu-heading,.gallery-heading{display:block}
+      .menu-heading>p,.gallery-heading p,.footer-tagline{width:auto;margin-top:30px}
+    }
+
+    @media(max-width:700px){
+      .header{height:72px;padding:0 6vw;background:rgba(16,16,14,.55);backdrop-filter:blur(14px)}
+      .hero{min-height:100svh;align-items:flex-end;padding:120px 0 95px}
+      .hero-image,.statement-image,.reservation-image{transform:none!important;animation:none!important}
+      .hero-shade{background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.92))}
+      .hero-content{width:88%;padding-top:0;margin:0 auto}
+      .hero h1{font-size:clamp(56px,18vw,96px);line-height:.82;letter-spacing:-3px;max-width:100%}
+      .hero-description,.hero-reserve{margin-left:0}
+      .hero-description p{max-width:92%;font-size:13px}
+      .hero-location{left:6vw;right:auto;bottom:30px;gap:22px}
+      .section{padding:90px 6vw}
+      .section-number{margin-bottom:45px}
+      .manifesto h2,.menu-heading h2,.gallery-heading h2,.chef-copy h2,.contact-copy h2{font-size:clamp(48px,14vw,70px);line-height:.9;letter-spacing:-2px}
+      .manifesto-copy .large-copy{font-size:22px}
+      .experience-image,.chef-photo{height:auto;min-height:380px;margin-top:60px}
+      .menu-tabs{overflow-x:auto;gap:18px;padding-bottom:2px;scrollbar-width:none}
+      .menu-tabs::-webkit-scrollbar{display:none}
+      .tab{flex:0 0 auto;font-size:10px}
+      .dish{min-height:auto;grid-template-columns:1fr;gap:16px;padding:22px 0}
+      .dish:hover{padding:22px 0}
+      .dish-image{width:100%;height:180px;border-radius:18px;overflow:hidden}
+      .dish-content{grid-template-columns:28px 1fr auto;gap:12px;align-items:start}
+      .dish-content h3{font-size:23px}
+      .dish-content p{font-size:11px}
+      .dish-content strong{grid-column:auto;text-align:right;white-space:nowrap;font-size:19px}
+      .statement{height:auto;min-height:520px;padding:95px 6vw}
+      .statement blockquote{font-size:clamp(42px,13vw,62px)}
+      .gallery-grid{grid-template-columns:1fr;grid-auto-rows:auto}
+      .gallery-wide,.gallery-tall{grid-column:auto;grid-row:auto}
+      .gallery-item{min-height:300px;border-radius:18px}
+      .reservation{min-height:560px;padding:90px 6vw}
+      .reservation h2{font-size:clamp(50px,15vw,74px)}
+      .contact-details{grid-template-columns:1fr;margin-top:45px;gap:25px}
+      .contact-details div:last-child{grid-column:auto}
+      .map{min-height:330px;border-radius:20px}
+      .footer{padding:70px 6vw 25px}
+      .footer-logo{font-size:clamp(72px,24vw,110px)}
+      .footer-links{grid-template-columns:1fr;gap:28px}
+      .footer-bottom{flex-direction:column;gap:14px}
+      .modal{width:92vw;padding:34px 22px}
+      .modal h2{font-size:52px}
+    }
+
+    @media(max-width:430px){
+      .hero{padding-bottom:85px}
+      .hero h1{font-size:54px;letter-spacing:-2px}
+      .hero-kicker{font-size:7px;letter-spacing:2px}
+      .hero-reserve{gap:18px;font-size:8px}
+      .hero-location{font-size:7px;gap:14px}
+      .dish-content{grid-template-columns:24px 1fr}
+      .dish-content strong{grid-column:2;text-align:left;margin-top:8px}
+      .gallery-item{min-height:270px}
+      .form-row{grid-template-columns:1fr}
+    }
+  `;
+  document.head.appendChild(style);
+}
+
 applyDemoSafety();
+applyResponsiveFix();

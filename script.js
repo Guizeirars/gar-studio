@@ -26,7 +26,8 @@ function injectUpgradesCss() {
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
-    select:focus-visible {
+    select:focus-visible,
+    textarea:focus-visible {
       outline: 2px solid var(--blue2);
       outline-offset: 4px;
     }
@@ -56,11 +57,13 @@ function injectUpgradesCss() {
       letter-spacing: 0;
     }
 
-    .trust-proof {
+    .trust-proof,
+    .client-reviews {
       border-top: 1px solid var(--line);
     }
 
-    .trust-head {
+    .trust-head,
+    .reviews-head {
       display: flex;
       justify-content: space-between;
       align-items: end;
@@ -68,7 +71,8 @@ function injectUpgradesCss() {
       margin-bottom: 60px;
     }
 
-    .trust-head h2 {
+    .trust-head h2,
+    .reviews-head h2 {
       font-family: var(--display);
       font-size: clamp(42px, 6vw, 86px);
       line-height: .98;
@@ -76,24 +80,28 @@ function injectUpgradesCss() {
       font-weight: 600;
     }
 
-    .trust-head h2 span {
+    .trust-head h2 span,
+    .reviews-head h2 span {
       color: #7e8491;
     }
 
-    .trust-head p:last-child {
-      max-width: 360px;
+    .trust-head p:last-child,
+    .reviews-head p:last-child {
+      max-width: 390px;
       color: #777d89;
       line-height: 1.7;
       font-size: 13px;
     }
 
-    .trust-grid {
+    .trust-grid,
+    .review-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .trust-card {
+    .trust-card,
+    .review-card {
       min-height: 190px;
       padding: 24px;
       border: 1px solid var(--line);
@@ -102,7 +110,8 @@ function injectUpgradesCss() {
       transition: .3s;
     }
 
-    .trust-card:hover {
+    .trust-card:hover,
+    .review-card:hover {
       transform: translateY(-6px);
       border-color: rgba(65, 105, 255, .45);
       background: linear-gradient(145deg, rgba(65,105,255,.09), rgba(255,255,255,.02));
@@ -121,16 +130,126 @@ function injectUpgradesCss() {
       font-size: 13px;
     }
 
-    .trust-card h3 {
+    .trust-card h3,
+    .review-card h3 {
       font-size: 20px;
       font-weight: 500;
       margin-bottom: 10px;
     }
 
-    .trust-card p {
+    .trust-card p,
+    .review-card p {
       color: #747a87;
       font-size: 13px;
       line-height: 1.65;
+    }
+
+    .review-stars {
+      color: var(--blue2);
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: #8d93a1;
+      font-size: 11px;
+    }
+
+    .review-form-wrap {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      background: radial-gradient(circle at top right, rgba(65,105,255,.14), transparent 32%), rgba(255,255,255,.025);
+    }
+
+    .review-form-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .review-form-head h3 {
+      font-size: 26px;
+      font-weight: 500;
+    }
+
+    .review-form-head p {
+      max-width: 430px;
+      color: #777d89;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .review-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .review-form label {
+      display: grid;
+      gap: 8px;
+      color: #858b98;
+      font-size: 10px;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .review-form label.full {
+      grid-column: span 2;
+    }
+
+    .review-form input,
+    .review-form select,
+    .review-form textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.035);
+      color: #fff;
+      padding: 15px;
+      font: 14px var(--font);
+      outline: none;
+    }
+
+    .review-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .review-form input::placeholder,
+    .review-form textarea::placeholder {
+      color: #5f6572;
+    }
+
+    .review-form select option {
+      color: #111;
+    }
+
+    .review-submit {
+      grid-column: span 2;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+
+    .review-note {
+      margin-top: 14px;
+      color: #707681;
+      font-size: 11px;
+      line-height: 1.6;
     }
 
     .contact-options {
@@ -222,15 +341,20 @@ function injectUpgradesCss() {
         font-weight: 700;
       }
 
-      .trust-head {
+      .trust-head,
+      .reviews-head,
+      .review-form-head {
         display: block;
       }
 
-      .trust-head p:last-child {
+      .trust-head p:last-child,
+      .reviews-head p:last-child,
+      .review-form-head p {
         margin-top: 28px;
       }
 
       .trust-grid,
+      .review-grid,
       .contact-options {
         grid-template-columns: 1fr 1fr;
       }
@@ -238,11 +362,19 @@ function injectUpgradesCss() {
 
     @media (max-width: 650px) {
       .trust-grid,
-      .contact-options {
+      .review-grid,
+      .contact-options,
+      .review-form {
         grid-template-columns: 1fr;
       }
 
-      .trust-card {
+      .review-form label.full,
+      .review-submit {
+        grid-column: auto;
+      }
+
+      .trust-card,
+      .review-card {
         min-height: auto;
       }
     }
@@ -251,7 +383,30 @@ function injectUpgradesCss() {
   document.head.appendChild(style);
 }
 
+function addNavigationLinks() {
+  if (nav && !nav.querySelector('a[href="#avaliacoes"]')) {
+    const contactLink = nav.querySelector('a[href="#contato"]');
+    const reviewLink = document.createElement('a');
+    reviewLink.href = '#avaliacoes';
+    reviewLink.textContent = 'Avaliações';
+    if (contactLink) contactLink.insertAdjacentElement('beforebegin', reviewLink);
+    else nav.appendChild(reviewLink);
+  }
+
+  const footerLinks = document.querySelector('.footer-links');
+  if (footerLinks && !footerLinks.querySelector('a[href="#avaliacoes"]')) {
+    const contactFooter = footerLinks.querySelector('a[href="#contato"]');
+    const reviewFooter = document.createElement('a');
+    reviewFooter.href = '#avaliacoes';
+    reviewFooter.textContent = 'Avaliações';
+    if (contactFooter) contactFooter.insertAdjacentElement('beforebegin', reviewFooter);
+    else footerLinks.appendChild(reviewFooter);
+  }
+}
+
 function enhanceContent() {
+  addNavigationLinks();
+
   const statementTitle = document.querySelector('.statement-copy h2');
   if (statementTitle && !document.querySelector('.statement-desc')) {
     statementTitle.insertAdjacentHTML(
@@ -318,6 +473,89 @@ function enhanceContent() {
     );
   }
 
+  if (contactSection && !document.querySelector('.client-reviews')) {
+    contactSection.insertAdjacentHTML(
+      'beforebegin',
+      `<section class="client-reviews section-pad" id="avaliacoes">
+        <div class="reviews-head reveal">
+          <div>
+            <p class="section-label">06 / AVALIAÇÕES</p>
+            <h2>O que dizem sobre a <span>GAR Studio.</span></h2>
+          </div>
+          <p>Clientes podem enviar uma nota e comentar a experiência. As avaliações passam por análise antes de aparecerem publicamente.</p>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <h3>Atendimento direto</h3>
+            <p>Um espaço para destacar comentários reais de clientes sobre comunicação, entrega e resultado do projeto.</p>
+            <div class="review-author"><span>Cliente GAR</span><span>5.0</span></div>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <h3>Site profissional</h3>
+            <p>Depoimentos futuros podem mostrar como o site ajudou o negócio a passar mais confiança para novos clientes.</p>
+            <div class="review-author"><span>Projeto entregue</span><span>5.0</span></div>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <h3>Experiência completa</h3>
+            <p>Depois dos primeiros clientes, esta área pode receber avaliações reais aprovadas pela GAR Studio.</p>
+            <div class="review-author"><span>Avaliação futura</span><span>5.0</span></div>
+          </article>
+
+          <article class="review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <h3>Feedback do cliente</h3>
+            <p>O formulário abaixo envia a avaliação para o WhatsApp da GAR Studio para aprovação manual.</p>
+            <div class="review-author"><span>Envio seguro</span><span>Manual</span></div>
+          </article>
+        </div>
+
+        <div class="review-form-wrap reveal">
+          <div class="review-form-head">
+            <h3>Deixe sua avaliação</h3>
+            <p>O comentário será enviado para a GAR Studio. Assim evitamos spam e só publicamos avaliações aprovadas.</p>
+          </div>
+
+          <form class="review-form" id="reviewForm">
+            <label>
+              Seu nome
+              <input type="text" id="reviewName" placeholder="Digite seu nome" required>
+            </label>
+
+            <label>
+              Nota
+              <select id="reviewRating" required>
+                <option value="">Escolha uma nota</option>
+                <option value="5 estrelas">★★★★★ 5 estrelas</option>
+                <option value="4 estrelas">★★★★☆ 4 estrelas</option>
+                <option value="3 estrelas">★★★☆☆ 3 estrelas</option>
+                <option value="2 estrelas">★★☆☆☆ 2 estrelas</option>
+                <option value="1 estrela">★☆☆☆☆ 1 estrela</option>
+              </select>
+            </label>
+
+            <label class="full">
+              Comentário
+              <textarea id="reviewMessage" placeholder="Conte como foi sua experiência com a GAR Studio" required></textarea>
+            </label>
+
+            <button type="submit" class="button primary review-submit">
+              Enviar avaliação pelo WhatsApp
+              <span>↗</span>
+            </button>
+          </form>
+
+          <p class="review-note">Para avaliações aparecerem automaticamente no site no futuro, o ideal é conectar essa área a um banco de dados com aprovação manual.</p>
+        </div>
+      </section>`
+    );
+  }
+
   const ctaContent = document.querySelector('.cta-content');
   const ctaButton = document.querySelector('.cta-content .button.primary.large');
 
@@ -347,6 +585,24 @@ function enhanceContent() {
   }
 
   document.querySelector('.contact-email')?.remove();
+}
+
+function setupReviews() {
+  document.addEventListener('submit', (event) => {
+    if (!event.target.matches('#reviewForm')) return;
+
+    event.preventDefault();
+
+    const name = document.getElementById('reviewName')?.value.trim() || '';
+    const rating = document.getElementById('reviewRating')?.value || '';
+    const message = document.getElementById('reviewMessage')?.value.trim() || '';
+
+    if (!name || !rating || !message) return;
+
+    const text = `Olá! Quero deixar uma avaliação da GAR Studio.\n\nNome: ${name}\nNota: ${rating}\nComentário: ${message}\n\nAutorizo a GAR Studio a analisar e usar esse depoimento no site.`;
+    window.open(`https://wa.me/5511983897886?text=${encodeURIComponent(text)}`, '_blank');
+    event.target.reset();
+  });
 }
 
 function setupMobileMenu() {
@@ -480,3 +736,4 @@ enhanceContent();
 setupMobileMenu();
 setupAnimations();
 setupQuoteModal();
+setupReviews();
